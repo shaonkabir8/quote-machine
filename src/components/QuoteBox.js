@@ -22,7 +22,22 @@ const QuoteBox = () => {
 		});
 	}, [])
 
+	
+	// Generate new Quotes
+	const generateNewQuote = () => {
+	    const newQuote = [];
+	    let randomNumber = Math.floor((Math.random() * allQuotes.length) + 1);
 
+		
+		allQuotes.map((quote,index) => {	
+	      if(index === randomNumber) {
+	        newQuote.push(quote)
+	      }
+		})
+		
+	    setQuote(newQuote[0].quote)
+	    setAuthor(newQuote[0].author);
+  	}
 	
   return (
     <div className="quote-wrapper" style={{background: color}}>
@@ -30,6 +45,7 @@ const QuoteBox = () => {
 		<div id="quote-box">
           <p id="text">{quote}</p>
           <p id="author"> - {author}</p>
+          <button id="new-quote" onClick={generateNewQuote}>New Quote</button>
         </div>
     </div>
   )
