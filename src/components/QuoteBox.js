@@ -39,7 +39,24 @@ const QuoteBox = () => {
 	    setAuthor(newQuote[0].author);
   	}
 	
+	// Change Background Color
+	const changeBackgroundColor = () => {
+		// found on https://codepen.io/bekza/pen/ALdZmV?editors=1010
+		const letters = '0123456789ABCDEF';
+	    let colorHexCode = '#';
+	    for (let i = 0; i < 6; i++ ) {
+		  colorHexCode += letters[Math.floor(Math.random() * 16)];
+	    }
+	    setColor(colorHexCode);
 
+	}
+
+
+	// Click Handler
+	const nextQuoteHandler = () => {
+		generateNewQuote();
+		changeBackgroundColor();
+	}
 
 	// Share on Twitter
 	const shareOnTwitter = () => {
@@ -57,7 +74,7 @@ const QuoteBox = () => {
           <p id="text">{quote}</p>
           <p id="author"> - {author}</p>
           <button id="twitter-share" onClick={shareOnTwitter}>Tweet</button>
-          <button id="new-quote" onClick={generateNewQuote}>New Quote</button>
+          <button id="new-quote" onClick={nextQuoteHandler}>New Quote</button>
         </div>
     </div>
   )
