@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Lora:400,400i,700');
+
+*  {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  padding-bottom: 50px;
+}
+#title {
+  padding: 20px;
+  color: #fff;
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+
+#quote-box {
+  margin: 0 auto;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 70vh;
+  position: relative;
+}
+
+#text {
+  text-align: center;
+  padding: 2% 20%;
+  font-style: italic;
+  height: 30vh;
+}
+
+#author {
+  text-align: right;
+  padding: 2% 5%;
+  font-size: 14px;
+}
+
+#twitter-share,
+#new-quote {
+  position: absolute;
+  content: '';
+  left:0;
+  bottom: 0;
+}
+
+#new-quote {
+  left:auto;
+  right:0;
+  bottom: 0;
+}
+
+
+
+.boxed-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all .4s linear;
+}
+
+.boxed-btn:hover {
+  background: transparent;
+  color: #000;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  #main {
+    font-size: 25px;
+  }
+
+  #quote-box {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  #title {
+    padding: 50px;
+  }
+
+  #text {
+    padding: 2% 10%;
+    height: 20vh;
+  }
+
+  #author {
+    padding: 2% 10%;
+    font-size: 16px;
+  }
+
+  #quote-box {
+    height: 50vh;
+  }
+
+
+
+}

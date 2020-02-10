@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-
+import '../styles.css'
 const QuoteBox = () => {
 
 	const [ quote, setQuote ] = useState('')
 	const [ author, setAuthor ] = useState('')
 	const [ loading, setLoading ] = useState(false)
 	const [ allQuotes, setAllQuotes ] = useState([])
-	const [ color, setColor ] = useState('#fff')
+	const [ color, setColor ] = useState('#00cf5d')
 
 	useEffect(() => {
 		fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
@@ -68,15 +68,15 @@ const QuoteBox = () => {
 
 
   return (
-    <div className="quote-wrapper" style={{background: color}}>
-		<h3>Famous Quotes</h3>
-		<div id="quote-box">
-          <p id="text">{quote}</p>
-          <p id="author"> - {author}</p>
-          <button id="twitter-share" onClick={shareOnTwitter}>Tweet</button>
-          <button id="new-quote" onClick={nextQuoteHandler}>New Quote</button>
-        </div>
-    </div>
+	    <div id="main" style={{background: color}}>
+			<h3 id="title">Famous Quotes</h3>
+			<div id="quote-box">
+	          <p id="text">{quote}</p>
+	          <p id="author"> - {author}</p>
+	          <button id="twitter-share" className="boxed-btn" onClick={shareOnTwitter}>Tweet</button>
+	          <button id="new-quote" className="boxed-btn" onClick={nextQuoteHandler}>New Quote</button>
+	        </div>
+	    </div>
   )
 }
 
