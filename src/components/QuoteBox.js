@@ -39,12 +39,24 @@ const QuoteBox = () => {
 	    setAuthor(newQuote[0].author);
   	}
 	
+
+
+	// Share on Twitter
+	const shareOnTwitter = () => {
+	    // found on https://gist.github.com/McKinneyDigital/2884508#file-share-twitter-js
+	    const url = "twitter.com";
+	    const text = `${author} - "${quote}"`
+	    window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+	}
+
+
   return (
     <div className="quote-wrapper" style={{background: color}}>
 		<h3>Famous Quotes</h3>
 		<div id="quote-box">
           <p id="text">{quote}</p>
           <p id="author"> - {author}</p>
+          <button id="twitter-share" onClick={shareOnTwitter}>Tweet</button>
           <button id="new-quote" onClick={generateNewQuote}>New Quote</button>
         </div>
     </div>
